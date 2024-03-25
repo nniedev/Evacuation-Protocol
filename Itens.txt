@@ -1,0 +1,37 @@
+Itens principais:
+- Porta de madeira
+- Porta que sobe
+- Chave
+- Livros
+- Numpad
+- Mesa madeira
+- Computador (Mouse e teclado)
+- Mesa laboratorio
+- Luz de emergência
+- Vaso
+
+
+Escritório do diretor: 
+- Mesa com computador
+- Quadro 
+- Estante
+- Porta de madeira
+
+Laboratório: 
+- Mesas de metal
+- Itens de Laboratório (????)
+- Janela
+- Porta que abre dos dois lados
+
+Reator:
+- Reator
+- Numpad
+- Porta que sobe
+- Luz de emergencia que gira
+
+Recepção: 
+- Porta de Vidro
+- Mesa semi-circular
+- Computador
+- Vaso
+
