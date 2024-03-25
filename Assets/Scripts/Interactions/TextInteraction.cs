@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TextInteraction : Interaction
 {
-    [SerializeField] private GameManager gameManager;
     [TextArea][SerializeField] private string text;
 
     public override void Interact()
