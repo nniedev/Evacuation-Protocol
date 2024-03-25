@@ -1,12 +1,13 @@
 Itens principais:
-- Porta de madeira
-- Porta que sobe
-- Chave
-- Livros
-- Numpad
-- Mesa madeira
-- Computador (Mouse e teclado)
+- Porta de madeira - ok
+- Porta que sobe - ok
+- Chave - ok 
+- Livros - ok 
+- Numpad - ok
+- Mesa madeira - ok
+- Computador (Mouse e teclado)- ok
 - Mesa laboratorio
+- Mesa recepção
 - Luz de emergência
 - Vaso
 
