@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,16 @@ public class GameManager : MonoBehaviour
     [Header("Interações")]
     [SerializeField] private GameObject textHolder;
     [SerializeField] private TMP_Text text;
+    [SerializeField] private GameObject documentHolder;
+    [SerializeField] private TMP_Text documentText;
     
     private bool inputDetected = false;
-    
+
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Update()
     {
     }
@@ -19,17 +27,23 @@ public class GameManager : MonoBehaviour
     {
         text.text = newtext;
         textHolder.SetActive(true);
-        StartCoroutine(WaitForInputCoroutine());
+        StartCoroutine(WaitForInputCoroutine(textHolder));
+    }
+
+    public void ShowDocument(string newText)
+    {
+        documentText.text = newText;
+        documentHolder.SetActive(true);
+        StartCoroutine(WaitForInputCoroutine(documentHolder));
     }
     
     private void SoftPause()
     {
         Time.timeScale = 0;
-        WaitForInputCoroutine();
         Time.timeScale = 1;
     }
     
-    IEnumerator WaitForInputCoroutine()
+    IEnumerator WaitForInputCoroutine(GameObject theGameObject)
     {
         Debug.Log("Aguardando entrada do jogador...");
 
@@ -43,7 +57,7 @@ public class GameManager : MonoBehaviour
             if (Input.anyKeyDown)
             {
                 // Define a flag indicando que um input foi detectado
-                textHolder.SetActive(false);
+                theGameObject.SetActive(false);
                 inputDetected = true;
             }
         }
