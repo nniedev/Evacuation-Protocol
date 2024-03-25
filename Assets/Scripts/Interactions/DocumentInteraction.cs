@@ -5,7 +5,7 @@ using UnityEngine;
 public class DocumentInteraction : Interaction
 {
     [SerializeField] private GameManager gameManager;
-    [SerializeField] private string documentText;
+    [TextArea][SerializeField] private string documentText;
     
     public override void Interact()
     {
