@@ -4609,7 +4609,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000023491233, y: -1, z: 0.000000084293696, w: 0.00000035762784}
   m_LocalPosition: {x: -0.084, y: 0.79, z: -9.059}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5152340696704812517}
@@ -5755,7 +5755,7 @@ Transform:
   m_GameObject: {fileID: 3495151636222694357}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000000842937, y: -0.00000023491229, z: 0.00000023491229, w: 1}
-  m_LocalPosition: {x: 0.025923727, y: -0.7848289, z: 0.026933312}
+  m_LocalPosition: {x: 0.026, y: -0.808, z: 0.027}
   m_LocalScale: {x: 0.71716, y: 0.71716, z: 0.71716}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8717,7 +8717,7 @@ Transform:
   m_GameObject: {fileID: 6857259898841210359}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000000842937, y: -0.00000023491229, z: 0.00000023491229, w: 1}
-  m_LocalPosition: {x: -0.12407628, y: -0.78482896, z: 0.026933242}
+  m_LocalPosition: {x: -0.124, y: -0.808, z: 0.027}
   m_LocalScale: {x: 0.71716, y: 0.71716, z: 0.71716}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11235,7 +11235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1020327010361650774}
   m_Layer: 0
-  m_Name: penelope1
+  m_Name: Penelope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11250,8 +11250,8 @@ Transform:
   m_GameObject: {fileID: 8154492892726867301}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.44, y: 0.7, z: 0}
+  m_LocalScale: {x: 0.98232, y: 0.98232, z: 0.98232}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8375549009232447677}
