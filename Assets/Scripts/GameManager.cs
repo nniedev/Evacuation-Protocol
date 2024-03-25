@@ -1,11 +1,15 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Timer")] 
+    [SerializeField] private float totalTime;
+    [SerializeField] private TMP_Text timerText;
+    [SerializeField] private bool timerIsPaused;
+    [SerializeField] private float remainingTime;
+    
     [Header("Interações")]
     [SerializeField] private GameObject textHolder;
     [SerializeField] private TMP_Text text;
@@ -17,12 +21,66 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+
+        remainingTime = totalTime * 60;
+        StartCoroutine(TimerCoroutine());
     }
 
-    void Update()
+    // Timer
+    IEnumerator TimerCoroutine()
     {
+        while (remainingTime > 0f)
+        {
+            // Verifica se o timer está pausado
+            while (timerIsPaused)
+            {
+                yield return null; // Aguarda até que o timer não esteja pausado
+            }
+
+            // Decrementa o tempo restante
+            remainingTime -= Time.deltaTime;
+            timerText.text = FormatTimer(remainingTime);
+
+            // Aguarda até o próximo frame
+            yield return null;
+        }
+
+        // O tempo acabou
+        TimeisOver();
+    }
+
+    private string FormatTimer(float time)
+    {
+        int timeInInt = (int)time;
+        int minutes = timeInInt / 60;
+        int seconds = timeInInt % 60;
+
+        string formatedTime = minutes + ":" + seconds;
+
+        if (seconds < 10)
+        {
+            formatedTime += "0";
+        }
+
+        if (minutes < 10)
+        {
+            formatedTime = "0" + formatedTime;
+        }
+
+        return formatedTime;
     }
     
+    private void SoftPause()
+    {
+        timerIsPaused = !timerIsPaused;
+    }
+
+    private void TimeisOver()
+    {
+        Debug.Log("O tempo acabou");
+    }
+    
+    // Interações
     public void ShowText(string newtext)
     {
         text.text = newtext;
@@ -36,15 +94,10 @@ public class GameManager : MonoBehaviour
         documentHolder.SetActive(true);
         StartCoroutine(WaitForInputCoroutine(documentHolder));
     }
-    
-    private void SoftPause()
-    {
-        Time.timeScale = 0;
-        Time.timeScale = 1;
-    }
-    
+
     IEnumerator WaitForInputCoroutine(GameObject theGameObject)
     {
+        SoftPause();
         Debug.Log("Aguardando entrada do jogador...");
 
         // Loop até que um input seja detectado
@@ -67,5 +120,6 @@ public class GameManager : MonoBehaviour
 
         // Agora que um input foi detectado, continue com o resto da função
         Debug.Log("Input do jogador detectado!");
+        SoftPause();
     }
 }
