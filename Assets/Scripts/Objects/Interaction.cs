@@ -1,9 +1,6 @@
 using UnityEngine;
 
-public class Interaction : MonoBehaviour
+abstract public class Interaction : MonoBehaviour
 {
-    void Interact()
-    {
-        Debug.Log("Interagiu!, mas ta sem o script certo em");
-    }
+    abstract public void Interact();
 }
