@@ -1,9 +1,16 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Inventário")]
+    [SerializeField] private GameObject inventoryHolder;
+    [SerializeField] private int inventorySize;
+    [SerializeField] private List<Item> inventory;
+    [SerializeField] private List<Sprite> holders;
+    
     [Header("Timer")] 
     [SerializeField] private float totalTime;
     [SerializeField] private TMP_Text timerText;
@@ -26,6 +33,28 @@ public class GameManager : MonoBehaviour
         StartCoroutine(TimerCoroutine());
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            inventoryHolder.SetActive(!inventoryHolder.activeSelf);
+        }
+    }
+    
+    // Inventário
+    public void AddItem(Item item)
+    {
+        if (inventory.Count < inventorySize)
+        {
+            inventory.Add(item);
+            holders[inventory.Count] = item.sprite;
+        }
+        else
+        {
+            ShowText("Você ve um" + item.sex + " " + item.itemName + " mas você não tem espaço para carrega-lo");
+        }
+    }
+    
     // Timer
     IEnumerator TimerCoroutine()
     {
