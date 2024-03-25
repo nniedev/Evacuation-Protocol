@@ -6,7 +6,6 @@ abstract public class Interaction : MonoBehaviour
     
     private void Start()
     {
-        Debug.Log("Achou?");
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     abstract public void Interact();

@@ -4,7 +4,7 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     public string itemName;
-    public char sex;
+    public bool isFeminine;
     public Sprite sprite;
     [TextArea] public string description;
 }

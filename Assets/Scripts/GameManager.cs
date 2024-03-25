@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -9,7 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject inventoryHolder;
     [SerializeField] private int inventorySize;
     [SerializeField] private List<Item> inventory;
-    [SerializeField] private List<Sprite> holders;
+    [SerializeField] private List<Image> holders;
+    [SerializeField] private GameObject itemOnGroundPrefab;
     
     [Header("Timer")] 
     [SerializeField] private float totalTime;
@@ -42,16 +44,48 @@ public class GameManager : MonoBehaviour
     }
     
     // Inventário
-    public void AddItem(Item item)
+    public bool AddItem(Item item)
     {
         if (inventory.Count < inventorySize)
         {
             inventory.Add(item);
-            holders[inventory.Count] = item.sprite;
+            holders[inventory.Count - 1].sprite = item.sprite;
+            if (item.isFeminine)
+            {
+                ShowText("Você pega uma " + item.itemName);
+            }
+            else
+            {
+                ShowText("Você pega um " + item.itemName);
+            }
+            return true;
         }
         else
         {
-            ShowText("Você ve um" + item.sex + " " + item.itemName + " mas você não tem espaço para carrega-lo");
+            if (item.isFeminine)
+            {
+                ShowText("Você ve uma " + item.itemName + " mas não tem espaço para carrega-la");
+            }
+            else
+            {
+                ShowText("Você ve um " + item.itemName + " mas não tem espaço para carrega-lo");
+            }
+
+            return false;
+        }
+    }
+
+    public void DropItem(int slot)
+    {
+        if (inventory[slot] != null)
+        {
+            Debug.Log("Soltando o item");
+            GameObject itemA = Instantiate(itemOnGroundPrefab,transform);
+            ItemInteraction itemInfos = itemA.GetComponent<ItemInteraction>();
+            itemInfos.item = inventory[slot];
+            itemInfos.isOnGround = true;
+            inventory.Remove(inventory[slot]);
+            holders[slot].sprite = null;
         }
     }
     
