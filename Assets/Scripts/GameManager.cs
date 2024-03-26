@@ -33,6 +33,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string NormalEndingScene;
     [SerializeField] private string GoodEndingScene;
     
+    // Room Loader
+    [Tooltip("Inicializar com o noma da sala inicial")]
+    [SerializeField] private string currentRoom;
+    private List<DropedItem> dropedItems;
+    
+    // Misc
     private bool inputDetected = false;
 
     private void Start()
@@ -60,6 +66,30 @@ public class GameManager : MonoBehaviour
 
             isFirstClose = false;
         }
+    }
+    
+    // Room Loader
+    public void LoadRoom(RoomLoader rl)
+    {
+        string pastRoom = currentRoom;
+        currentRoom = rl.roomName;
+        
+        rl.Load(FilterItems(rl.roomName),pastRoom);
+    }
+
+    private List<DropedItem> FilterItems(string roomname)
+    {
+        List<DropedItem> filtredList = new List<DropedItem>();
+
+        foreach (var x in dropedItems)
+        {
+            if (x.Room == roomname)
+            {
+                filtredList.Add(x);
+            }
+        }
+        
+        return filtredList;
     }
     
     // Inventário
