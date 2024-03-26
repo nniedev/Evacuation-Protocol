@@ -6,10 +6,20 @@ Itens principais:
 - Numpad - ok
 - Mesa madeira - ok
 - Computador (Mouse e teclado)- ok
-- Mesa laboratorio
-- Mesa recepção
-- Luz de emergência
-- Vaso
+- Mesa laboratorio - ok
+- Mesa recepção - ok
+- Vaso - ok
+- Armário de ferro - ok
+- Prateleira - ok
+- Alicate - ok
+- Cadeado - ok
+- Luz de emergência - ok
+- Reator - ok
+- Mesa com botoes e comandos - ok
+- Cadeira - ok
+- Lâmpada - ok
+
+- Porta Saída
 
 
 Escritório do diretor: 
@@ -17,6 +27,7 @@ Escritório do diretor:
 - Quadro 
 - Estante
 - Porta de madeira
+- Cadeira
 
 Laboratório: 
 - Mesas de metal
@@ -35,4 +46,18 @@ Recepção:
 - Mesa semi-circular
 - Computador
 - Vaso
+
+
+
+Materiais:
+- FerroChave
+- Cor PC
+- Capa Livros
+- Madeira
+- Roupa
+- Cor de pele
+- Cabelo
+- Amarrar cabelo
+- Caule flor
+- Corpo Flor
 
