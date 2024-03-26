@@ -122,7 +122,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2703832365484224168}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: DropItem
+        m_MethodName: GetPressedItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -663,6 +663,8 @@ MonoBehaviour:
   text: {fileID: 4287056023963644660}
   documentHolder: {fileID: 2708482340825746581}
   documentText: {fileID: 667401164816363557}
+  isChoosingItem: 0
+  isFirstClose: 0
 --- !u!1 &3287434296229061003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1443,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2703832365484224168}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: DropItem
+        m_MethodName: GetPressedItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1573,7 +1575,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2703832365484224168}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: DropItem
+        m_MethodName: GetPressedItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

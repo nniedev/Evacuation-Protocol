@@ -24,6 +24,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text text;
     [SerializeField] private GameObject documentHolder;
     [SerializeField] private TMP_Text documentText;
+    [SerializeField] private bool isChoosingItem;
+    [SerializeField] private bool isFirstClose;
+    private UseItemInteraction uii;
+
+    [Header("Fim de Jogo")]
+    [SerializeField] private string BadEndingScene;
+    [SerializeField] private string NormalEndingScene;
+    [SerializeField] private string GoodEndingScene;
     
     private bool inputDetected = false;
 
@@ -40,6 +48,17 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             inventoryHolder.SetActive(!inventoryHolder.activeSelf);
+            isFirstClose = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && inventoryHolder.activeSelf)
+        {
+            if (!isFirstClose)
+            {
+                inventoryHolder.SetActive(false);
+                isChoosingItem = false;
+            }
+
+            isFirstClose = false;
         }
     }
     
@@ -75,18 +94,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GetPressedItem(int slot)
+    {
+        if (slot < inventory.Count && inventory[slot] != null)
+        {
+            if (isChoosingItem)
+            {
+                Debug.Log("Escolhendo Item");
+                ReturnChosenItem(inventory[slot]);
+            }
+            else
+            {
+                DropItem(slot);
+            }
+        }
+    }
+    
     public void DropItem(int slot)
     {
-        if (inventory[slot] != null)
-        {
-            Debug.Log("Soltando o item");
-            GameObject itemA = Instantiate(itemOnGroundPrefab,transform);
-            ItemInteraction itemInfos = itemA.GetComponent<ItemInteraction>();
-            itemInfos.item = inventory[slot];
-            itemInfos.isOnGround = true;
-            inventory.Remove(inventory[slot]);
-            holders[slot].sprite = null;
-        }
+        Debug.Log("Soltando o item");
+        GameObject itemA = Instantiate(itemOnGroundPrefab,transform); 
+        ItemInteraction itemInfos = itemA.GetComponent<ItemInteraction>();
+        itemInfos.item = inventory[slot];
+        itemInfos.isOnGround = true;
+        inventory.Remove(inventory[slot]);
+        holders[slot].sprite = null;
     }
     
     // Timer
@@ -144,6 +176,27 @@ public class GameManager : MonoBehaviour
     }
     
     // Interações
+    public void ChooseItem(UseItemInteraction UII)
+    {
+        uii = UII;
+        isChoosingItem = true;
+        inventoryHolder.SetActive(true);
+    }
+
+    private void ReturnChosenItem(Item chosenItem)
+    {
+        isChoosingItem = false;
+        inventoryHolder.SetActive(false);
+        if (chosenItem == uii.necessaryItem)
+        {
+            uii.CorrectItem();
+        }
+        else
+        {
+            uii.WrongItem();
+        }
+    }
+    
     public void ShowText(string newtext)
     {
         text.text = newtext;
