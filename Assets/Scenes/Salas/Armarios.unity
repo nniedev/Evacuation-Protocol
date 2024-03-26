@@ -14653,7 +14653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorSceneName: LabMetalDoor
-  nextRoomSceneName: Reator
+  nextRoomSceneName: Canos
 --- !u!65 &1459881665
 BoxCollider:
   m_ObjectHideFlags: 0
