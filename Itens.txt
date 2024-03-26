@@ -19,6 +19,8 @@ Itens principais:
 - Cadeira - ok
 - Lâmpada - ok
 - Porta Saída - ok
+- Janela - ok
+- Tubos e Válvulas
 
 
 Escritório do diretor: 
