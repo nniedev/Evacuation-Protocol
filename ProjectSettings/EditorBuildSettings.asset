@@ -35,5 +35,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Outros/BadEnding.unity
     guid: d2ee3f4fb5f197247b6e45541e1f95ce
+  - enabled: 1
+    path: Assets/Scenes/Salas/Recepcao.unity
+    guid: fdba416c0367c1d48b2bd6bdb902fde8
+  - enabled: 1
+    path: Assets/Scenes/Salas/Chefe.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Salas/Armarios.unity
+    guid: a8d58d5577808644d8238784edb4be76
+  - enabled: 1
+    path: Assets/Scenes/Salas/Banheiro.unity
+    guid: b6906b1b97161874e834d51aa8b08eed
+  - enabled: 1
+    path: Assets/Scenes/Salas/Escritorios.unity
+    guid: a658d31e8aff38443aa4427faf5dedbf
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
