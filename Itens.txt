@@ -18,16 +18,15 @@ Itens principais:
 - Mesa com botoes e comandos - ok
 - Cadeira - ok
 - Lâmpada - ok
-
-- Porta Saída
+- Porta Saída - ok
 
 
 Escritório do diretor: 
-- Mesa com computador
-- Quadro 
-- Estante
-- Porta de madeira
-- Cadeira
+- Mesa com computador - ok
+- Quadro - ok
+- Estante - ok
+- Porta de madeira - ok
+- Cadeira - ok
 
 Laboratório: 
 - Mesas de metal
@@ -42,22 +41,22 @@ Reator:
 - Luz de emergencia que gira
 
 Recepção: 
-- Porta de Vidro
-- Mesa semi-circular
-- Computador
-- Vaso
+- Porta de Vidro - ok
+- Mesa semi-circular - ok
+- Computador - ok
+- Vaso - ok
 
 
 
 Materiais:
-- FerroChave
-- Cor PC
-- Capa Livros
-- Madeira
-- Roupa
-- Cor de pele
-- Cabelo
-- Amarrar cabelo
-- Caule flor
-- Corpo Flor
+- FerroChave - ok
+- Cor PC - ok
+- Capa Livros - ok
+- Madeira - ok
+- Roupa - ok
+- Cor de pele - ok
+- Cabelo - ok
+- Amarrar cabelo - ok
+- Caule flor - ok
+- Corpo Flor - ok
 
