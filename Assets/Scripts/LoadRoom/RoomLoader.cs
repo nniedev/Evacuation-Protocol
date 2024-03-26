@@ -34,6 +34,7 @@ public class RoomLoader : MonoBehaviour
 
     private void SpawnPlayer(int index)
     {
+        Debug.Log(index);
         Instantiate(playerPrefab,
             spawnPosition[index].position,
             spawnPosition[index].rotation);

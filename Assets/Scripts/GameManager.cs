@@ -199,15 +199,16 @@ public class GameManager : MonoBehaviour
         int minutes = timeInInt / 60;
         int seconds = timeInInt % 60;
 
-        string formatedTime = minutes + ":" + seconds;
+        string formatedTime = " ";
 
         if (seconds < 10)
         {
-            formatedTime += "0";
+            formatedTime = minutes + ":" + "0" + seconds;
         }
 
         if (minutes < 10)
         {
+            formatedTime = minutes + ":" + seconds;
             formatedTime = "0" + formatedTime;
         }
 

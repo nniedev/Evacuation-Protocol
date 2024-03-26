@@ -696,7 +696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PreTime: 1
   CameraAnimator: {fileID: 1678137787}
-  DoorAnimator: {fileID: 0}
+  DoorAnimator: {fileID: 571421775}
   AnimationTime: 1
 --- !u!4 &1213021731
 Transform:
