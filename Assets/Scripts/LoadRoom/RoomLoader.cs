@@ -21,12 +21,18 @@ public class RoomLoader : MonoBehaviour
     // Chamada pelo Game Manager
     public void Load(List<DropedItem> items, string pastRoom)
     {
-        SpawPlayer(roomDoor.IndexOf(pastRoom));
-        SpawItems(items);
+        SpawnPlayer(roomDoor.IndexOf(pastRoom));
+        SpawnItems(items);
+        DoOnLoad();
+    }
+    
+    public void Load(string pastRoom)
+    {
+        SpawnPlayer(roomDoor.IndexOf(pastRoom));
         DoOnLoad();
     }
 
-    private void SpawPlayer(int index)
+    private void SpawnPlayer(int index)
     {
         Instantiate(playerPrefab,
             spawnPosition[index].position,
@@ -34,7 +40,7 @@ public class RoomLoader : MonoBehaviour
         initialCamera[index].SetActive(true);
     }
 
-    private void SpawItems(List<DropedItem> items)
+    private void SpawnItems(List<DropedItem> items)
     {
         foreach (var x in items)
         {

@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        dropedItems = new List<DropedItem>();
         DontDestroyOnLoad(this.gameObject);
 
         remainingTime = totalTime * 60;
@@ -73,14 +74,25 @@ public class GameManager : MonoBehaviour
     {
         string pastRoom = currentRoom;
         currentRoom = rl.roomName;
-        
-        rl.Load(FilterItems(rl.roomName),pastRoom);
+        List<DropedItem> itemList = FilterItems((rl.roomName));
+
+        if (itemList.Count == 0)
+        {
+            rl.Load(pastRoom);
+        }
+        else
+        {
+            rl.Load(itemList,pastRoom);
+        }
     }
 
     private List<DropedItem> FilterItems(string roomname)
     {
         List<DropedItem> filtredList = new List<DropedItem>();
-
+        if (dropedItems == null || dropedItems.Count == 0)
+        {
+            return filtredList;
+        }
         foreach (var x in dropedItems)
         {
             if (x.Room == roomname)
