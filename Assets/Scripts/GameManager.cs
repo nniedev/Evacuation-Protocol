@@ -35,8 +35,9 @@ public class GameManager : MonoBehaviour
     
     // Room Loader
     [Tooltip("Inicializar com o noma da sala inicial")]
-    [SerializeField] private string currentRoom;
+    [SerializeField] public string currentRoom;
     private List<DropedItem> dropedItems;
+    [SerializeField] public string nextRoom;
     
     // Misc
     private bool inputDetected = false;
@@ -70,6 +71,11 @@ public class GameManager : MonoBehaviour
     }
     
     // Room Loader
+    public void SetNextRoom(string room)
+    {
+        nextRoom = room;
+    }
+    
     public void LoadRoom(RoomLoader rl)
     {
         string pastRoom = currentRoom;
