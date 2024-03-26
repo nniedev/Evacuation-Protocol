@@ -772,7 +772,7 @@ PrefabInstance:
       objectReference: {fileID: 483850053}
     - target: {fileID: 6171264459750929323, guid: 98946b9dfe052274d908ee281599f640, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6171264459750929323, guid: 98946b9dfe052274d908ee281599f640, type: 3}
       propertyPath: m_LocalPosition.y
@@ -871,8 +871,6 @@ MonoBehaviour:
   CameraAnimator: {fileID: 1678137787}
   DoorAnimator: {fileID: 825547273}
   AnimationTime: 1
-  roomASceneName: Reator
-  roomBSceneName: Sala dos canos
 --- !u!4 &1213021731
 Transform:
   m_ObjectHideFlags: 0

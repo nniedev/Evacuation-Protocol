@@ -665,6 +665,11 @@ MonoBehaviour:
   documentText: {fileID: 667401164816363557}
   isChoosingItem: 0
   isFirstClose: 0
+  BadEndingScene: BadEnding
+  NormalEndingScene: NormalEnding
+  GoodEndingScene: GoodEnding
+  currentRoom: 
+  nextRoom: 
 --- !u!1 &3287434296229061003
 GameObject:
   m_ObjectHideFlags: 0
