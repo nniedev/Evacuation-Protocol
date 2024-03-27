@@ -13776,7 +13776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2450924981665407464, guid: 7965f2e79cacd8a4bbe14bfcb12b5df8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.36
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2450924981665407464, guid: 7965f2e79cacd8a4bbe14bfcb12b5df8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -15005,7 +15005,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 75.7
+  field of view: 83
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -24224,7 +24224,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -24250,13 +24250,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102512723}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22648862, y: 0.007571458, z: -0.0033950296, w: 0.97397846}
+  m_LocalRotation: {x: 0.30946246, y: -0.0008277148, z: 0.00079282647, w: 0.950911}
   m_LocalPosition: {x: 15.089, y: 4.534, z: -1.086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 26.183, y: 0.844, z: -0.203}
+  m_LocalEulerAnglesHint: {x: 36.054, y: -0.077, z: 0.071}
 --- !u!43 &2109083433
 Mesh:
   m_ObjectHideFlags: 0
@@ -24571,8 +24571,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1605325, y: 3.1128628, z: 1.8790636}
-  m_Center: {x: 0.08026621, y: 1.0564314, z: 0.7305862}
+  m_Size: {x: 0.812412, y: 3.1128628, z: 1.8790636}
+  m_Center: {x: -0.09379391, y: 1.0564314, z: 0.7305862}
 --- !u!43 &2116996274
 Mesh:
   m_ObjectHideFlags: 0

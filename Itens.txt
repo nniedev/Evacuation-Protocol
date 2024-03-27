@@ -20,7 +20,12 @@ Itens principais:
 - Lâmpada - ok
 - Porta Saída - ok
 - Janela - ok
-- Tubos e Válvulas
+- Tubos e Válvulas - ok 
+- privada - ok
+- pia - ok 
+- espelho - ok
+- compartimento banheiro - ok
+- armários - ok
 
 
 Escritório do diretor: 
@@ -61,4 +66,9 @@ Materiais:
 - Amarrar cabelo - ok
 - Caule flor - ok
 - Corpo Flor - ok
+
+FAZER:
+- Desaparecer item quando pega
+- Usar chave
+- Arrumar alicate
 
