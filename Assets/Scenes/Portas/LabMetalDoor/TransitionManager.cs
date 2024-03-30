@@ -24,7 +24,7 @@ public class TransitionManager : MonoBehaviour
         yield return new WaitForSeconds(PreTime);
 
         // Toca a primeira animação
-        DoorAnimator.SetTrigger("Open");
+        //DoorAnimator.SetTrigger("Open");
 
         // Aguarda até que a primeira animação termine
         yield return new WaitForSeconds(AnimationTime); // Ajuste esse tempo para a duração da sua animação

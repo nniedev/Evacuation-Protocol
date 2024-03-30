@@ -13,6 +13,6 @@ abstract public class UseItemInteraction : Interaction
 
     public void WrongItem()
     {
-        gameManager.ShowText("Nada acontece");
+      //  gameManager.ShowText("Nada acontece");
     }
 }

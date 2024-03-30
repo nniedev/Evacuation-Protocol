@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Spin : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed;
+    [SerializeField] public float rotationSpeed;
     [SerializeField] private Transform transformToRotate;
     void Update()
     {

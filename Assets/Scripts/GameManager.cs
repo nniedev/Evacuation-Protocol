@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,11 +46,26 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        dropedItems = new List<DropedItem>();
+        if (PlayerPrefs.GetInt("Start") == 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Start",1);
+            PlayerPrefs.SetInt("Reator",0);
+        }
+    
+        dropedItems = new System.Collections.Generic.List<DropedItem>();
         DontDestroyOnLoad(this.gameObject);
 
         remainingTime = totalTime * 60;
         StartCoroutine(TimerCoroutine());
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("Start",0);
     }
 
     private void Update()
@@ -81,6 +97,10 @@ public class GameManager : MonoBehaviour
     {
         string pastRoom = currentRoom;
         currentRoom = rl.roomName;
+       /* if (rl.roomName == "Lab")
+        {
+            DeixarLabFoda();
+        }*/
         List<DropedItem> itemList = FilterItems((rl.roomName));
 
         if (itemList.Count == 0)
@@ -92,6 +112,13 @@ public class GameManager : MonoBehaviour
             rl.Load(itemList,pastRoom);
         }
     }
+
+   /* public void DeixarLabFoda()
+    {
+       GameObject.Find("LuzAAA").GetComponent<Light>().color = Color.blue;
+       GameObject.Find("LuzAAA").GetComponent<Light>().color = Color.blue;
+       GameObject.Find("LuzEmergencia").GetComponent<Spin>().rotationSpeed = 125;
+    }*/
 
     private List<DropedItem> FilterItems(string roomname)
     {
@@ -145,6 +172,7 @@ public class GameManager : MonoBehaviour
 
     public void GetPressedItem(int slot)
     {
+        Debug.Log("Prescionado: " + slot + " EscolhendoItem = " + isChoosingItem);
         if (slot < inventory.Count && inventory[slot] != null)
         {
             if (isChoosingItem)
@@ -229,9 +257,22 @@ public class GameManager : MonoBehaviour
     // Interações
     public void ChooseItem(UseItemInteraction UII)
     {
+        if (inventory.IndexOf(UII.necessaryItem) != -1)
+        {
+            int a = inventory.IndexOf(UII.necessaryItem);
+            inventory.Remove(UII.necessaryItem);
+            holders[a].sprite = null;
+            UII.CorrectItem();
+        }
+        else
+        {
+            UII.WrongItem();
+        }
+        /*
         uii = UII;
         isChoosingItem = true;
         inventoryHolder.SetActive(true);
+        */
     }
 
     private void ReturnChosenItem(Item chosenItem)
