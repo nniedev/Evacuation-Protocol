@@ -6370,6 +6370,7 @@ MonoBehaviour:
   rotationSpeed: 140
   moveSpeed: 3
   runningSpeed: 1.5
+  backSpeed: 0.4
 --- !u!114 &5157168028008929957
 MonoBehaviour:
   m_ObjectHideFlags: 0
