@@ -1,5 +1,4 @@
-# 📊 Evacuation Protocol
-
+# 🎮 Evacuation Protocol
 Este repositório contém o desenvolvimento de um jogo desenvolvido em apenas 36 horas para uma GameJam da FOG/ICMC-USP 
 
 ## 🔍 Objetivo:
